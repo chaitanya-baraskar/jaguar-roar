@@ -36,7 +36,7 @@ if (count($roars)){
 ?>
 <table border='1' cellspacing='0' cellpadding='5' width='500'>
 <?php
-    foreach ($roarss as $key => $list){
+    foreach ($roars as $key => $list){
     echo "<tr valign='top'>\n";
     echo "<td>".$list['username'] ."</td>\n";
     echo "<td>".$list['body'] ."<br/>\n";

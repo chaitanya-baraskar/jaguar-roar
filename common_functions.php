@@ -6,7 +6,7 @@ function add_post($userid,$body){
     return;
   }
 
-  $sql = "insert into roars (user_id, body, timestamp) values ($userid, '". mysql_real_escape_string($body). "',now())";
+  $sql = "insert into roars (users_id, body, timestamp) values ($userid, '". mysql_real_escape_string($body). "',now())";
   $result = mysql_query($sql);
   if (!$result)
     die(mysql_error());
@@ -15,12 +15,14 @@ function add_post($userid,$body){
 function show_posts($userid){
   $posts = array();
 
-  $sql = "select body, timestamp from roars where user_id = '$userid' order by timestamp desc";
+  //$sql = "select body, timestamp from roars where users_id = '$userid' order by timestamp desc";
+  $sql ="select users.id, users.username, roars.body, roars.timestamp from users, roars 
+         where users.id = roars.users_id and users.id = '$userid' order by roars.timestamp desc";
   $result = mysql_query($sql);
   
   while($data = mysql_fetch_object($result)){
     $posts[] = array( 'timestamp' => $data->timestamp, 
-		      'username' => get_username($userid), 
+		      'username' => $data->username, 
 		      'body' => $data->body
 		      );
   }
