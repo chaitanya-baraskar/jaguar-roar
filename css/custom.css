@@ -1,0 +1,45 @@
+/* === CSS FILTER EFFECTS === */
+body.modalBlur > *:not(.modal) {
+  -webkit-filter: blur(10px);
+}
+
+body {
+  padding-top: 300px;
+}
+.modal-backdrop, .modal-backdrop.fade.in {
+    filter: alpha(opacity=20);
+    -khtml-opacity: 0.20;
+    -moz-opacity: 0.20;
+    opacity: 0.20;
+}
+
+body.modal-open,
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+    margin-right: 0;
+}
+.modal-open .modal,.btn:focus{
+    outline:none!important
+}
+
+
+#imagecover{
+ position: absolute;
+ top: 0px;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: -1;
+ background: url(../img/jaguar.jpg);
+ background-size:cover;
+ background-repeat:no-repeat;
+
+
+}
+
+input[type=text]:focus, input[type=password]:focus{
+      border-color:#ed9c28;
+      -moz-box-shadow: 0px 0px 6px #ed9c28;
+      -webkit-box-shadow: 0px 0px 6px #ed9c28;
+      box-shadow: 0px 0px 6px #ed9c28;
+}
