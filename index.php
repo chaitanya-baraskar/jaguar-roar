@@ -1,55 +1,83 @@
-<?php 
+<?php
 session_start();
 include_once('connection.php');
 include_once('common_functions.php');
 
-if (!$_SESSION['userid']){
-  header("Location: login.php");
-  exit;
+if (!$_SESSION['userid']) {
+    header("Location: login.php");
+    exit;
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!doctype html>
+
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Meow</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Itty Bitty Kitty</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
 </head>
+
 <body>
-
+<div id="imagecover" style='overflow:auto; z-index:1'>
 <?php
-  if (isset($_SESSION['message'])){
-    echo "<b>". $_SESSION['message']."</b>";
+if (isset($_SESSION['message'])) {
+    echo "<center><span style='color:white;'><b>" . $_SESSION['message'] . "</b></span></center>";
     unset($_SESSION['message']);
-  }
+}
 ?>
-<form method='post' action='add.php'>
-<p>Your status:</p>
-<textarea name='body' rows='6' cols='60' wrap=VIRTUAL></textarea>
-<p><input type='submit' value='submit'/></p>
-</form>
+<div id="stuff" align="center" style='background-color : transparent;overflow:auto; z-index:2'>
+    <form method='post' action='add.php'>
+        <br><br><br>
+        <textarea class="form-control has-warning" name='body' rows="3" maxlength='360' placeholder="Your Status"
+                  style='width:33%'></textarea><br>
 
-<?php
-  $roars = show_posts($_SESSION['userid']);
+        <p><div  align="right" style="width:33%">
+            <button type="submit" name="roar" class="btn btn-warning btn-md">Roar</button>
+        </div>
+        </p>
+    </form>
+    <br><br>
+    <?php
+    $roars = show_posts($_SESSION['userid']);
 
-if (count($roars)){
-?>
-<table border='1' cellspacing='0' cellpadding='5' width='500'>
+    if (count($roars)){
+    ?>
+    <?php
+    foreach ($roars as $key => $list) {
+        echo "<div class='panel panel-warning' style='width:33%'>\n";
+        echo "<div class='panel-heading' style='padding-bottom: 0; padding-top:0'>\n";
+        echo "<table class='table table-condensed panel-title' style='text-align: center;border-collapse: collapse;'>\n";
+        echo "<tr class='warning' style='border:none'>\n";
+        echo "<td style='text-align: left; width:33%; border:none;'>\n";
+        echo "<strong>" . $list['username'] . "</strong>\n";
+        echo "</td>\n";
+        echo "<td style='text-align: left; width:33%; border:none'>\n";
+        echo "</td>\n";
+        echo "<td style='text-align: right; width:33%; border:none;'>\n";
+        echo "" . $list['timestamp'] . "\n";
+        echo "</td>\n";
+        echo "</tr>\n";
+        echo "</table>\n";
+        echo "</div>\n";
+        echo "<div class='panel-body' style='text-align: left'>\n";
+        echo "" . $list['body'] . "<br/>\n";
+        echo "</div>\n";
+        echo "</div>\n";
+    }
+    ?>
+    <button type="button" name="new" class="btn btn-danger btn-xs" onclick="location.href='login.php';">Logout</button>
+    <br><br><br>
+</div>
+</div>
 <?php
-    foreach ($roars as $key => $list){
-    echo "<tr valign='top'>\n";
-    echo "<td>".$list['username'] ."</td>\n";
-    echo "<td>".$list['body'] ."<br/>\n";
-    echo "<small>".$list['timestamp'] ."</small></td>\n";
-    echo "</tr>\n";
-  }
-?>
-</table>
- <a href=login.php>Logout</a>
-<?php
-    }else{
-?>
-<p><b>There's nothing posted!</b></p>
+} else {
+    ?>
+    <p><b>There's nothing posted!</b></p>
 <?php
 }
 ?>

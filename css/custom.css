@@ -33,13 +33,21 @@ body.modal-open,
  background: url(../img/jaguar.jpg);
  background-size:cover;
  background-repeat:no-repeat;
+ background-attachment: fixed;
 
 
 }
 
-input[type=text]:focus, input[type=password]:focus{
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=textarea]:focus{
       border-color:#ed9c28;
       -moz-box-shadow: 0px 0px 6px #ed9c28;
       -webkit-box-shadow: 0px 0px 6px #ed9c28;
       box-shadow: 0px 0px 6px #ed9c28;
+}
+
+.table-borderless td,
+.table-borderless tr
+.table-borderless th {
+    border: none;
+    padding: 0;
 }
