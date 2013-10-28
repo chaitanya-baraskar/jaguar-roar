@@ -33,8 +33,8 @@ if (isset($_SESSION['message'])) {
 <div id="stuff" align="center" style='background-color : transparent;overflow:auto; z-index:2'>
     <form method='post' action='add.php'>
         <br><br><br>
-        <textarea class="form-control has-warning" name='body' rows="3" maxlength='360' placeholder="Your Status"
-                  style='width:33%'></textarea><br>
+        <textarea class="form-control has-warning" name='body' rows="5" maxlength='360' placeholder="Your Status"
+                  style='width:33%; resize: none;'></textarea><br>
 
         <p><div  align="right" style="width:33%">
             <button type="submit" name="roar" class="btn btn-warning btn-md">Roar</button>
