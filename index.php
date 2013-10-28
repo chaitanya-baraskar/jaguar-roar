@@ -30,13 +30,13 @@ if (isset($_SESSION['message'])) {
     unset($_SESSION['message']);
 }
 ?>
-<div id="stuff" align="center" style='background-color : transparent;overflow:auto; z-index:2'>
+<div class="container" id="stuff" align="center" style='background-color : transparent;overflow:auto; z-index:2'>
     <form method='post' action='add.php'>
         <br><br><br>
         <textarea class="form-control has-warning" name='body' rows="5" maxlength='360' placeholder="Your Status"
-                  style='width:33%; resize: none;'></textarea><br>
+                  style='resize: none;'></textarea><br>
 
-        <p><div  align="right" style="width:33%">
+        <p><div  align="right">
             <button type="submit" name="roar" class="btn btn-warning btn-md">Roar</button>
         </div>
         </p>
@@ -49,16 +49,16 @@ if (isset($_SESSION['message'])) {
     ?>
     <?php
     foreach ($roars as $key => $list) {
-        echo "<div class='panel panel-warning' style='width:33%'>\n";
+        echo "<div class='panel panel-warning'>\n";
         echo "<div class='panel-heading' style='padding-bottom: 0; padding-top:0'>\n";
         echo "<table class='table table-condensed panel-title' style='text-align: center;border-collapse: collapse;'>\n";
         echo "<tr class='warning' style='border:none'>\n";
-        echo "<td style='text-align: left; width:33%; border:none;'>\n";
+        echo "<td style='text-align: left;  border:none;'>\n";
         echo "<strong>" . $list['username'] . "</strong>\n";
         echo "</td>\n";
-        echo "<td style='text-align: left; width:33%; border:none'>\n";
+        echo "<td style='text-align: left; border:none'>\n";
         echo "</td>\n";
-        echo "<td style='text-align: right; width:33%; border:none;'>\n";
+        echo "<td style='text-align: right; border:none;'>\n";
         echo "" . $list['timestamp'] . "\n";
         echo "</td>\n";
         echo "</tr>\n";
