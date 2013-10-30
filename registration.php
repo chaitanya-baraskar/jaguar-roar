@@ -88,18 +88,6 @@ function show_reg_form(){
     </script>
     <a href="#myModal" data-toggle="modal"> <div id="imagecover" style="z-index: 1;" ></div></a>
 
-
-    <tr><td>Password: (Min: 8 characters)</td><td>
-            <input type="password" name="password" maxlength="10">
-        </td></tr>
-    <tr><td>Confirm Password:</td><td>
-            <input type="password" name="password2" maxlength="10">
-        </td></tr>
-
-    <tr><th colspan=2><input type="submit" name="submit"
-                             value="Register"></th></tr> </table>
-    </form>
-
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow: hidden;">
         <div class="modal-dialog">
