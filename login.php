@@ -98,7 +98,7 @@ function show_login(){
                         <?php
 
                         if (isset($_SESSION['message'])){
-                            echo "<br><b>". $_SESSION['message']."</b>";
+                            echo "<br><center><b>". $_SESSION['message']."</b></center>";
                             unset($_SESSION['message']);
                         }
                         ?>
