@@ -93,7 +93,7 @@ function show_reg_form(){
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" class="close" onclick="location.href='login.php';" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title">New User Registration</h4>
                 </div>
                 <div class="modal-body">
@@ -117,7 +117,7 @@ function show_reg_form(){
                         <?php
 
                         if (isset($_SESSION['message'])){
-                            echo "<br><b>". $_SESSION['message']."</b>";
+                            echo "<br><center><span style='color:black;'><strong>". $_SESSION['message']."</strong></span></center>";
                             unset($_SESSION['message']);
                         }
                         ?>

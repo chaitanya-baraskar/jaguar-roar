@@ -77,7 +77,13 @@ if (isset($_SESSION['message'])) {
 <?php
 } else {
     ?>
-    <p><b>There's nothing posted!</b></p>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <span style='color:black;'><strong>There's nothing posted!</strong>
+        </div>
+    </div>
+    <!--remove later when we have a navbar-->
+    <button type="button" name="new" class="btn btn-danger btn-xs" onclick="location.href='login.php';">Logout</button>
 <?php
 }
 ?>
