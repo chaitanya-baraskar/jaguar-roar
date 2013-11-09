@@ -11,7 +11,7 @@ function add_post($userid,$body){
   if (!$result)
     die(mysql_error());
 }
-
+/*
 function show_posts($userid){
   $posts = array();
 
@@ -28,6 +28,82 @@ function show_posts($userid){
   }
   return $posts;
 }
+*/
+
+function show_posts($userid,$limit=0){
+    $roars = array();
+
+    $user_string = implode(',', $userid);
+
+    $added =  " and id in ($user_string)";
+
+    if ($limit > 0){
+        $added = "limit $limit";
+    }else{
+        $added = '';
+    }
+   // $sqlquery ="select users.id, users.username, roars.body, roars.timestamp from users, roars
+   //      where users.id = roars.users_id and users.id = '$user_string' order by roars.timestamp desc";
+    $sqlquery = "select roars.users_id, roars.body, roars.timestamp, users.username from roars, users
+		where roars.users_id in ($user_string) and roars.users_id = users.id
+		order by roars.timestamp desc";
+		// $added ";
+
+    $result = mysql_query($sqlquery);
+
+    while($data = mysql_fetch_object($result)){
+        $roars[] = array( 	'timestamp' => $data->timestamp,
+            'username' => $data->username,
+            'body' => $data->body
+        );
+    }
+    return $roars;
+
+}
+
+function following($userid){
+    $sheep = array();
+    $sqlquery = "select distinct users_id from sheep
+			where sheep_id = '$userid'";
+    $result = mysql_query($sqlquery);
+    while($data = mysql_fetch_object($result)){
+        array_push($sheep, $data->users_id);
+    }
+    return $sheep;
+}
+
+function check_sheep_count($sheep, $herder){
+    $sqlquery = "select count(*) from sheep
+			where users_id='$herder' and sheep_id='$sheep'";
+    $result = mysql_query($sqlquery);
+    $row = mysql_fetch_row($result);
+    return $row[0];
+
+}
+
+//Follow another user
+function become_sheep($my_userID,$their_userID){
+    $count = check_sheep_count($my_userID,$their_userID);
+
+    if ($count == 0){
+        $sqlquery = "insert into sheep (users_id, sheep_id)
+				values ($their_userID,$my_userID)";
+        $result = mysql_query($sqlquery);
+    }
+}
+
+//unfollow another user
+function im_not_a_sheep($my_userID,$their_userID){
+    $count = check_sheep_count($my_userID,$their_userID);
+
+    if ($count != 0){
+        $sqlquery = "delete from sheep
+				where users_id='$their_userID' and sheep_id='$my_userID'
+				limit 1";
+
+        $result = mysql_query($sqlquery);
+    }
+}
 
 function get_username($userid){
   $sql = "select username from users where id = '$userid'";
@@ -43,16 +119,39 @@ function get_userid($username){
   return $id->id;
 }
 
-function show_users(){
-  $users = array();
-  $sql = "select id, username from users where status='active' order by username";
-  $result = mysql_query($sql);
+function show_users($user_id=0){
+    $added = "";
+    if ($user_id > 0){
+        $follow = array();
+        $follow_sqlquery = "select sheep.users_id from sheep
+				where sheep_id = $user_id";
+        $follow_result = mysql_query($follow_sqlquery);
 
-  while ($data = mysql_fetch_object($result)){
-    $users[$data->id] = $data->username;
-  }
-  return $users;
+        while($f = mysql_fetch_object($follow_result)){
+            array_push($follow, $f->users_id);
+        }
+        if (count($follow)){
+            $id_string = implode(',', $follow);
+            $added =  " and id in ($id_string)";
+
+
+        }else{
+            return array();
+        }
+    }
+    $users = array();
+    $sqlquery = "select id, username from users
+		where status='active'
+		$added order by username";
+
+    $result = mysql_query($sqlquery);
+
+    while ($data = mysql_fetch_object($result)){
+        $users[$data->id] = $data->username;
+    }
+    return $users;
 }
+
 
 function user_exist($username){
   $username = mysql_real_escape_string($username);

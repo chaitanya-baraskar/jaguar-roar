@@ -43,8 +43,16 @@ if (isset($_SESSION['message'])) {
     </form>
     <br><br>
     <?php
-    $roars = show_posts($_SESSION['userid']);
 
+    $users = show_users($_SESSION['userid']);
+
+    if (count($users)){
+        $myusers = array_keys($users);
+    }else{
+        $myusers = array();
+    }
+    $myusers[] = $_SESSION['userid'];
+    $roars = show_posts($myusers,0);
     if (count($roars)){
     ?>
     <?php
@@ -77,13 +85,7 @@ if (isset($_SESSION['message'])) {
 <?php
 } else {
     ?>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <span style='color:black;'><strong>There's nothing posted!</strong>
-        </div>
-    </div>
-    <!--remove later when we have a navbar-->
-    <button type="button" name="new" class="btn btn-danger btn-xs" onclick="location.href='login.php';">Logout</button>
+    <p><b>There's nothing posted!</b></p>
 <?php
 }
 ?>

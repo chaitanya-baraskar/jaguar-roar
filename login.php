@@ -75,6 +75,7 @@ function show_login(){
         });
     </script>
 
+
     <a href="#myModal" data-toggle="modal"> <div id="imagecover" style="z-index: 1;" ></div></a>
 
     <!-- Modal -->
