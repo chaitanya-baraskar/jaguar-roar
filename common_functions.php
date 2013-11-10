@@ -181,4 +181,17 @@ function check_password($username, $password){
   }
 }
 
+function show_navbar(){
+    echo "<!--navbar begin-->\n";
+    echo "<nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>\n";
+    echo "  <ul style='float: right; width: 100%;' class='nav navbar-nav'>\n";
+    echo "    <li><a href='#' class='navbar-brand'></a></li>\n";
+    echo "    <li class='active'><a href='index.php'>Home</a></li>\n";
+    echo "    <li><a href='userlist.php'>Follow</a></li>\n";
+    echo "    <li style='float: right;'><button type='button' class='btn btn-danger navbar-btn' onclick='location.href=\"login.php\"'>Logout</button></li>\n";
+    echo "</ul>\n";
+    echo "</nav>\n";
+    echo "<!--navbar end-->\n";
+}
+
 ?>

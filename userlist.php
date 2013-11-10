@@ -15,7 +15,7 @@ if (!$_SESSION['userid']) {
   <title>Meow - User list</title>
 </head>
 <body>
-
+<?php show_navbar() ?>
 <h1>List of Users</h1>
 <?php
   $users = show_users();

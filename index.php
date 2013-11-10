@@ -23,6 +23,7 @@ if (!$_SESSION['userid']) {
 </head>
 
 <body>
+<?php show_navbar() ?>
 <div id="imagecover" style='overflow:auto; z-index:1'>
 <?php
 if (isset($_SESSION['message'])) {
@@ -78,7 +79,6 @@ if (isset($_SESSION['message'])) {
         echo "</div>\n";
     }
     ?>
-    <button type="button" name="new" class="btn btn-danger btn-xs" onclick="location.href='login.php';">Logout</button>
     <br><br><br>
 </div>
 </div>
@@ -90,8 +90,6 @@ if (isset($_SESSION['message'])) {
 <span style='color:black;'><strong>There's nothing posted!</strong>
         </div>
     </div>
-    <!--remove later when we have a navbar-->
-    <button type="button" name="new" class="btn btn-danger btn-xs" onclick="location.href='login.php';">Logout</button>
 <?php
 }
 ?>
