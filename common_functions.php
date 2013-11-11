@@ -44,7 +44,7 @@ function show_posts($userid,$limit=0){
     }
    // $sqlquery ="select users.id, users.username, roars.body, roars.timestamp from users, roars
    //      where users.id = roars.users_id and users.id = '$user_string' order by roars.timestamp desc";
-    $sqlquery = "select roars.users_id, roars.body, roars.timestamp, users.username from roars, users
+    $sqlquery = "select roars.users_id, roars.body, roars.timestamp, roars.id, users.username from roars, users
 		where roars.users_id in ($user_string) and roars.users_id = users.id
 		order by roars.timestamp desc";
 		// $added ";
@@ -54,11 +54,20 @@ function show_posts($userid,$limit=0){
     while($data = mysql_fetch_object($result)){
         $roars[] = array( 	'timestamp' => $data->timestamp,
             'username' => $data->username,
-            'body' => $data->body
+            'body' => $data->body,
+            'msg_id'=> $data->id,
         );
     }
     return $roars;
 
+}
+
+function delete_roar($msg_id){
+
+    $sqlquery = "delete from roars where roars.id = '$msg_id'";
+
+    mysql_query($sqlquery);
+    echo $sqlquery;
 }
 
 function following($userid){
@@ -188,7 +197,7 @@ function show_navbar(){
     echo "    <li><a href='#' class='navbar-brand'></a></li>\n";
     echo "    <li class='active'><a href='index.php'>Home</a></li>\n";
     echo "    <li><a href='userlist.php'>Follow</a></li>\n";
-    echo "    <li style='float: right;'><button type='button' class='btn btn-danger navbar-btn' onclick='location.href=\"login.php\"'>Logout</button></li>\n";
+    echo "    <li style='float: right;'><button type='button' class='btn btn-danger navbar-btn btn-sm' onclick='location.href=\"login.php\"'>Logout</button></li>\n";
     echo "</ul>\n";
     echo "</nav>\n";
     echo "<!--navbar end-->\n";

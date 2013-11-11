@@ -7,7 +7,21 @@ if (!$_SESSION['userid']) {
     header("Location: login.php");
     exit;
 }
+
+if(isset($_POST['delete'])){
+    $my_name = get_username($_SESSION['userid']);
+    if( strcmp ( $my_name , $_POST['username'] )==0){
+        delete_roar($_POST[msg_id]);
+        $_SESSION['message']='Deleted post!';
+    }
+    else{
+        $_SESSION['message']="You can't delete this post!";
+    }
+}
 ?>
+
+
+
 <!doctype html>
 
 <head>
@@ -23,17 +37,17 @@ if (!$_SESSION['userid']) {
 </head>
 
 <body>
-<?php show_navbar() ?>
+<?php show_navbar(); ?>
 <div id="imagecover" style='overflow:auto; z-index:1'>
 <?php
 if (isset($_SESSION['message'])) {
-    echo "<center><span style='color:white;'><b>" . $_SESSION['message'] . "</b></span></center>";
+    echo "<center><br><br><br><span style='color:white;'><b>" . $_SESSION['message'] . "</span></center>";
     unset($_SESSION['message']);
 }
 ?>
 <div class="container" id="stuff" align="center" style='background-color : transparent;overflow:auto; z-index:2'>
     <form method='post' action='add.php'>
-        <br><br><br>
+        <br>
         <textarea class="form-control has-warning" name='body' rows="5" maxlength='360' placeholder="Your Status"
                   style='resize: none;'></textarea><br>
 
@@ -70,6 +84,13 @@ if (isset($_SESSION['message'])) {
         echo "<td style='text-align: right; border:none;'>\n";
         echo "" . $list['timestamp'] . "\n";
         echo "</td>\n";
+        echo "<td style='text-align: right; width:10%; border:none;'>\n";
+        echo "<form class='form-horizontal' role='form' action='".$_SERVER['PHP_SELF']."' method='post'>\n";
+        echo "<input type='hidden' name='msg_id' value='".$list['msg_id']."'>\n";
+        echo "<input type='hidden' name='username' value='".$list['username']."'>\n";
+        echo "<button type='submit' name='delete' class='close'>&times;</button>\n";
+        echo "</form>";
+        echo "</td>\n";
         echo "</tr>\n";
         echo "</table>\n";
         echo "</div>\n";
@@ -92,8 +113,8 @@ if (isset($_SESSION['message'])) {
     </div>
 <?php
 }
+
 ?>
-
-
 </body>
 </html>
+

@@ -3,9 +3,9 @@ body.modalBlur > *:not(.modal) {
   -webkit-filter: blur(10px);
 }
 
-body {
+/*body {
   padding-top: 300px;
-}
+}*/
 .modal-backdrop, .modal-backdrop.fade.in {
     filter: alpha(opacity=20);
     -khtml-opacity: 0.20;
