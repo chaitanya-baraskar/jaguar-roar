@@ -11,7 +11,7 @@ if (!$_SESSION['userid']) {
 if(isset($_POST['delete'])){
     $my_name = get_username($_SESSION['userid']);
     if( strcmp ( $my_name , $_POST['username'] )==0){
-        delete_roar($_POST[msg_id]);
+        delete_roar($_POST['msg_id']);
         $_SESSION['message']='Deleted post!';
     }
     else{
@@ -41,8 +41,11 @@ if(isset($_POST['delete'])){
 <div id="imagecover" style='overflow:auto; z-index:1'>
 <?php
 if (isset($_SESSION['message'])) {
-    echo "<center><br><br><br><span style='color:white;'><b>" . $_SESSION['message'] . "</span></center>";
+    echo "<center><br><br><br><span style='color:white;'><strong>" . $_SESSION['message'] . "</strong></span></center>\n";
     unset($_SESSION['message']);
+} else{
+
+    echo "<br><br><br><br>\n";
 }
 ?>
 <div class="container" id="stuff" align="center" style='background-color : transparent;overflow:auto; z-index:2'>
