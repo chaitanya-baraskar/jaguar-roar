@@ -11,24 +11,7 @@ function add_post($userid,$body){
   if (!$result)
     die(mysql_error());
 }
-/*
-function show_posts($userid){
-  $posts = array();
 
-  //$sql = "select body, timestamp from roars where users_id = '$userid' order by timestamp desc";
-  $sql ="select users.id, users.username, roars.body, roars.timestamp from users, roars 
-         where users.id = roars.users_id and users.id = '$userid' order by roars.timestamp desc";
-  $result = mysql_query($sql);
-  
-  while($data = mysql_fetch_object($result)){
-    $posts[] = array( 'timestamp' => $data->timestamp, 
-		      'username' => $data->username, 
-		      'body' => $data->body
-		      );
-  }
-  return $posts;
-}
-*/
 
 function show_posts($userid,$limit=0){
     $roars = array();
@@ -42,8 +25,7 @@ function show_posts($userid,$limit=0){
     }else{
         $added = '';
     }
-   // $sqlquery ="select users.id, users.username, roars.body, roars.timestamp from users, roars
-   //      where users.id = roars.users_id and users.id = '$user_string' order by roars.timestamp desc";
+
     $sqlquery = "select roars.users_id, roars.body, roars.timestamp, roars.id, users.username from roars, users
 		where roars.users_id in ($user_string) and roars.users_id = users.id
 		order by roars.timestamp desc";
@@ -67,7 +49,6 @@ function delete_roar($msg_id){
     $sqlquery = "delete from roars where roars.id = '$msg_id'";
 
     mysql_query($sqlquery);
-    echo $sqlquery;
 }
 
 function following($userid){
