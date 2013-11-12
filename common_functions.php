@@ -174,12 +174,22 @@ function check_password($username, $password){
 function show_navbar(){
     echo "<!--navbar begin-->\n";
     echo "<nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>\n";
-    echo "  <ul style='float: right; width: 100%;' class='nav navbar-nav'>\n";
-    echo "    <li><a href='#' class='navbar-brand'></a></li>\n";
-    echo "    <li class='active'><a href='index.php'>Home</a></li>\n";
-    echo "    <li><a href='userlist.php'>Follow</a></li>\n";
-    echo "    <li style='float: right;'><button type='button' class='btn btn-danger navbar-btn btn-sm' onclick='location.href=\"login.php\"'>Logout</button></li>\n";
-    echo "</ul>\n";
+    echo "   <a href='#' class='navbar-brand'>".$_SESSION['username']." </a>\n";
+    echo "  <button class='navbar-toggle' data-toggle='collapse' data-target='.navHeaderCollapse'>\n";
+    echo "    <span class='sr-only'>Toggle navigation</span>\n";
+    echo "    <span class='icon-bar'></span>\n";
+    echo "    <span class='icon-bar'></span>\n";
+    echo "    <span class='icon-bar'></span>\n";
+    echo "  </button>\n";
+    echo "  <div class='collapse navbar-collapse navHeaderCollapse'>\n";
+    echo "    <ul class='nav navbar-nav'>\n";
+    echo "      <li class='active'><a href='index.php'>Home</a></li>\n";
+    echo "      <li><a href='userlist.php'>Follow</a></li>\n";
+    echo "     </ul>";
+    echo "    <ul class='nav navbar-nav navbar-right'>\n";
+    echo "      <li><button type='button' class='btn btn-danger navbar-btn btn-sm' onclick='location.href=\"login.php\"'>Logout</button></li>\n";
+    echo "    </ul>\n";
+    echo "  </div>\n";
     echo "</nav>\n";
     echo "<!--navbar end-->\n";
 }
