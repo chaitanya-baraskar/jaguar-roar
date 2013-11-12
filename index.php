@@ -21,7 +21,6 @@ if(isset($_POST['delete'])){
 ?>
 
 
-
 <!doctype html>
 
 <head>
@@ -33,6 +32,12 @@ if(isset($_POST['delete'])){
     <link rel="stylesheet" href="css/custom.css">
     <script src="js/jquery-2.0.3.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script>
+        function charCount(v){
+            var length = v.value.length;
+            $('#char_count').text(length);
+        };
+    </script>
 
 </head>
 
@@ -51,8 +56,11 @@ if (isset($_SESSION['message'])) {
 <div class="container" id="stuff" align="center" style='background-color : transparent;overflow:auto; z-index:2'>
     <form method='post' action='add.php'>
         <br>
+        <div align="right" style="color: white; font-weight: bold;">
+        <scan id="char_count"> 0 </scan> <scan> / 360 </scan>
+        </div>
         <textarea class="form-control has-warning" name='body' rows="5" maxlength='360' placeholder="Your Status"
-                  style='resize: none;'></textarea><br>
+                  style='resize: none;' onKeyPress="charCount(this)"></textarea><br>
 
         <p><div  align="right">
             <button type="submit" name="roar" class="btn btn-warning btn-md">Roar</button>
