@@ -1,56 +1,40 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+-- phpMyAdmin SQL Dump
+-- version 4.0.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 13, 2013 at 02:20 AM
+-- Server version: 5.6.14-log
+-- PHP Version: 5.4.12
 
-CREATE SCHEMA IF NOT EXISTS `jungle` DEFAULT CHARACTER SET utf8 ;
-USE `jungle` ;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
--- -----------------------------------------------------
--- Table `jungle`.`users`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `jungle`.`users` ;
 
-CREATE TABLE IF NOT EXISTS `jungle`.`users` (
-  `id` INT(10) NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(256) NOT NULL,
-  `email` VARCHAR(256) NOT NULL,
-  `password` VARCHAR(32) NOT NULL,
-  `status` ENUM('active','inactive') NOT NULL DEFAULT 'active',
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `jungle`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hashtags`
+--
+
+CREATE TABLE IF NOT EXISTS `hashtags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hashtag` varchar(64) NOT NULL,
+  `roars_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `username` (`username` ASC))
-ENGINE = MyISAM
-AUTO_INCREMENT = 3;
+  UNIQUE KEY `id` (`id`),
+  KEY `hashtag` (`hashtag`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
-
--- -----------------------------------------------------
--- Table `jungle`.`roars`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `jungle`.`roars` ;
-
-CREATE TABLE IF NOT EXISTS `jungle`.`roars` (
-  `body` VARCHAR(360) NOT NULL,
-  `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `users_id` INT(10) NOT NULL,
-  `id` INT NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`))
-ENGINE = MyISAM
-AUTO_INCREMENT = 32;
-
-
--- -----------------------------------------------------
--- Table `jungle`.`sheep`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `jungle`.`sheep` ;
-
-CREATE TABLE IF NOT EXISTS `jungle`.`sheep` (
-  `sheep_id` INT(11) NOT NULL,
-  `users_id` INT(10) NOT NULL,
-  `id` INT NOT NULL AUTO_INCREMENT,
-  INDEX `fk_sheep_users1_idx` (`users_id` ASC),
-  PRIMARY KEY (`id`))
-ENGINE = MyISAM;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

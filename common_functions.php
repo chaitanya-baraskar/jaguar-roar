@@ -1,15 +1,34 @@
 <?php
 
 function add_post($userid,$body){
-  if (!$userid | !$body){
-    $_SESSION['message']="Empty Message";
-    return;
-  }
+   if (!$userid | !$body){
+     $_SESSION['message']="Empty Message";
+     return;
+   }
+   $body = mysql_real_escape_string($body);
+   $sqlquery = "insert into roars (users_id, body, timestamp) values ($userid, '$body' ,now())";
+   $result = mysql_query($sqlquery);
+   if (!$result){
+     die(mysql_error());
+   }
+   $_SESSION['message'] = "Your post has been added!";
+   $msg_id = mysql_insert_id();
+   $hashes = array();
+   $body = strtolower($body);
+   $words = explode(" ", $body);
+    foreach($words as $word){
+        if (ord($word) == ord("#") and strlen($word) > 1){
+            array_push($hashes, substr($word, 1) );
 
-  $sql = "insert into roars (users_id, body, timestamp) values ($userid, '". mysql_real_escape_string($body). "',now())";
-  $result = mysql_query($sql);
-  if (!$result)
-    die(mysql_error());
+        }
+    }
+    foreach($hashes as $hash){
+        $sqlquery = "insert into hashtags (hashtag, roars_id) values ('$hash', $msg_id)";
+        $result = mysql_query($sqlquery);
+        if (!$result){
+            die(mysql_error());
+        }
+    }
 }
 
 
@@ -36,7 +55,7 @@ function show_posts($userid,$limit=0){
     while($data = mysql_fetch_object($result)){
         $roars[] = array( 	'timestamp' => $data->timestamp,
             'username' => $data->username,
-            'body' => $data->body,
+            'body' => stripslashes($data->body),
             'msg_id'=> $data->id,
         );
     }
@@ -47,8 +66,15 @@ function show_posts($userid,$limit=0){
 function delete_roar($msg_id){
 
     $sqlquery = "delete from roars where roars.id = '$msg_id'";
-
-    mysql_query($sqlquery);
+    $test = mysql_query($sqlquery);
+    if (!$test){
+        die(mysql_error());
+    }
+    $sqlquery = "delete from hashtags where hashtags.roars_id = '$msg_id'";
+    $test = mysql_query($sqlquery);
+    if (!$test){
+        die(mysql_error());
+    }
 }
 
 function following($userid){
