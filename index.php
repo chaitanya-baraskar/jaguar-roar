@@ -60,7 +60,7 @@ if (isset($_SESSION['message'])) {
         <scan id="char_count"> 0 </scan> <scan> / 360 </scan>
         </div>
         <textarea class="form-control has-warning" name='body' rows="5" maxlength='360' placeholder="Your Status"
-                  style='resize: none;' onKeyPress="charCount(this)"></textarea><br>
+                  style='resize: none;' onKeyUp="charCount(this)"></textarea><br>
 
         <p><div  align="right">
             <button type="submit" name="roar" class="btn btn-warning btn-md">Roar</button>
@@ -84,7 +84,7 @@ if (isset($_SESSION['message'])) {
     <?php
     foreach ($roars as $key => $list) {
         echo "<div class='panel panel-warning'>\n";
-        echo "<div class='panel-heading' style='padding-bottom: 0; padding-top:0'>\n";
+        echo "<div class='panel-heading' style='padding-bottom: 0; padding-top:0;'>\n";
         echo "<table class='table table-condensed panel-title' style='text-align: center;border-collapse: collapse;'>\n";
         echo "<tr class='warning' style='border:none'>\n";
         echo "<td style='text-align: left;  border:none;'>\n";
