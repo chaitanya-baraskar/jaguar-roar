@@ -3,7 +3,7 @@ session_start();
 include_once('connection.php');
 include_once('common_functions.php');
 
-if (!$_SESSION['userid']) {
+if (!isset($_SESSION['userid'])) {
     header("Location: login.php");
     exit;
 }
