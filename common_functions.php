@@ -47,15 +47,43 @@ function show_posts($userid,$limit=0){
 
     $sqlquery = "select roars.users_id, roars.body, roars.timestamp, roars.id, users.username from roars, users
 		where roars.users_id in ($user_string) and roars.users_id = users.id
-		order by roars.timestamp desc";
-		// $added ";
+		order by roars.timestamp desc $added ";
 
     $result = mysql_query($sqlquery);
 
     while($data = mysql_fetch_object($result)){
         $roars[] = array( 	'timestamp' => $data->timestamp,
             'username' => $data->username,
-            'body' => stripslashes($data->body),
+            'body' => substr(htmlspecialchars(stripslashes($data->body)),0, 360),
+            'msg_id'=> $data->id,
+        );
+    }
+    return $roars;
+
+}
+
+function search_posts($tags,$limit=0){
+    $roars = array();
+
+    $tag_string = implode("','", $tags);
+
+    //$added =  " and hashtags.hashtag in ('$tag_string')";
+
+    if ($limit > 0){
+        $added = "limit $limit";
+    }else{
+        $added = '';
+    }
+
+    $sqlquery = "select roars.users_id, roars.body, roars.timestamp, roars.id, users.username, hashtags.hashtag, hashtags.roars_id from roars, users, hashtags
+		where hashtags.hashtag in ('$tag_string') and hashtags.roars_id = roars.id and roars.users_id = users.id
+		order by roars.timestamp desc $added ";
+    $result = mysql_query($sqlquery);
+
+    while($data = mysql_fetch_object($result)){
+        $roars[] = array( 	'timestamp' => $data->timestamp,
+            'username' => $data->username,
+            'body' => substr(htmlspecialchars(stripslashes($data->body)),0,360),
             'msg_id'=> $data->id,
         );
     }
@@ -200,7 +228,7 @@ function check_password($username, $password){
 function show_navbar(){
     echo "<!--navbar begin-->\n";
     echo "<nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>\n";
-    echo "   <a href='#' class='navbar-brand'>".$_SESSION['username']." </a>\n";
+    echo "   <a href='index.php' class='navbar-brand'>".$_SESSION['username']." </a>\n";
     echo "  <button class='navbar-toggle' data-toggle='collapse' data-target='.navHeaderCollapse' >\n";
     echo "    <span class='sr-only'>Toggle navigation</span>\n";
     echo "    <span class='icon-bar'></span>\n";
@@ -213,16 +241,49 @@ function show_navbar(){
     echo "      <li><a href='userlist.php'>Follow</a></li>\n";
     echo "     </ul>\n";
     echo "    <ul class='nav navbar-nav navbar-right'>\n";
-    echo "<li style='padding-top: 5px'><form class='navbar-form' method='post' action='search.php' id='search'>\n";
+    echo "<li style='padding-top: 5px'><form class='navbar-form' method='post' action='search.php' id='search' name='search'>\n";
     echo "<input name='q' type='text' size='40' placeholder='Search' />\n";
     echo "</form></li>\n";
-    echo "<li><a href='#'></a></li>\n";
-    echo "<li><a href='#'></a></li>\n";
+    echo "      <li><a href='#'></a></li>\n";
+    echo "      <li><a href='#'></a></li>\n";
     echo "      <li style='padding-top: 3px'><button type='button' class='btn btn-danger navbar-btn btn-sm' onclick='location.href=\"login.php\"'>Logout</button></li>\n";
+    echo "      <li><a href='#'></a></li>\n";
     echo "    </ul>\n";
     echo "  </div>\n";
     echo "</nav>\n";
     echo "<!--navbar end-->\n";
+}
+
+function display_roars($roars){
+    foreach ($roars as $key => $list) {
+        echo "<div class='panel panel-warning'>\n";
+        echo "<div class='panel-heading' style='padding-bottom: 0; padding-top:0;'>\n";
+        echo "<table class='table table-condensed panel-title' style='text-align: center;border-collapse: collapse;'>\n";
+        echo "<tr class='warning' style='border:none'>\n";
+        echo "<td style='text-align: left;  border:none;'>\n";
+        echo "<strong>" . $list['username'] . "</strong>\n";
+        echo "</td>\n";
+        echo "<td style='text-align: left; border:none'>\n";
+        echo "</td>\n";
+        echo "<td style='text-align: right; border:none;'>\n";
+        echo "" . $list['timestamp'] . "\n";
+        echo "</td>\n";
+        echo "<td style='text-align: right; width:10%; border:none;'>\n";
+        echo "<form class='form-horizontal' role='form' action='".$_SERVER['PHP_SELF']."' method='post'>\n";
+        echo "<input type='hidden' name='msg_id' value='".$list['msg_id']."'>\n";
+        echo "<input type='hidden' name='username' value='".$list['username']."'>\n";
+        echo "<button type='submit' name='delete' class='close'>&times;</button>\n";
+        echo "</form>";
+        echo "</td>\n";
+        echo "</tr>\n";
+        echo "</table>\n";
+        echo "</div>\n";
+        echo "<div class='panel-body' style='text-align: left'>\n";
+        echo "" . $list['body'] . "<br/>\n";
+        echo "</div>\n";
+        echo "</div>\n";
+    }
+
 }
 
 ?>

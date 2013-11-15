@@ -28,10 +28,10 @@ if(isset($_POST['delete'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Itty Bitty Kitty</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="css/custom.css">
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="./js/jquery-2.0.3.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
     <script>
         function charCount(v){
             var length = v.value.length;
@@ -62,10 +62,10 @@ if (isset($_SESSION['message'])) {
         <textarea class="form-control has-warning" name='body' rows="5" maxlength='360' placeholder="Your Status"
                   style='resize: none;' onKeyUp="charCount(this)"></textarea><br>
 
-        <p><div  align="right">
+        <div  align="right">
             <button type="submit" name="roar" class="btn btn-warning btn-md">Roar</button>
         </div>
-        </p>
+
     </form>
     <br><br>
     <?php
@@ -80,37 +80,9 @@ if (isset($_SESSION['message'])) {
     $myusers[] = $_SESSION['userid'];
     $roars = show_posts($myusers,0);
     if (count($roars)){
+        display_roars($roars);
     ?>
-    <?php
-    foreach ($roars as $key => $list) {
-        echo "<div class='panel panel-warning'>\n";
-        echo "<div class='panel-heading' style='padding-bottom: 0; padding-top:0;'>\n";
-        echo "<table class='table table-condensed panel-title' style='text-align: center;border-collapse: collapse;'>\n";
-        echo "<tr class='warning' style='border:none'>\n";
-        echo "<td style='text-align: left;  border:none;'>\n";
-        echo "<strong>" . $list['username'] . "</strong>\n";
-        echo "</td>\n";
-        echo "<td style='text-align: left; border:none'>\n";
-        echo "</td>\n";
-        echo "<td style='text-align: right; border:none;'>\n";
-        echo "" . $list['timestamp'] . "\n";
-        echo "</td>\n";
-        echo "<td style='text-align: right; width:10%; border:none;'>\n";
-        echo "<form class='form-horizontal' role='form' action='".$_SERVER['PHP_SELF']."' method='post'>\n";
-        echo "<input type='hidden' name='msg_id' value='".$list['msg_id']."'>\n";
-        echo "<input type='hidden' name='username' value='".$list['username']."'>\n";
-        echo "<button type='submit' name='delete' class='close'>&times;</button>\n";
-        echo "</form>";
-        echo "</td>\n";
-        echo "</tr>\n";
-        echo "</table>\n";
-        echo "</div>\n";
-        echo "<div class='panel-body' style='text-align: left'>\n";
-        echo "" . $list['body'] . "<br/>\n";
-        echo "</div>\n";
-        echo "</div>\n";
-    }
-    ?>
+
     <br><br><br>
 </div>
 </div>
