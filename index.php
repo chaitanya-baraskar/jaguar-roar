@@ -32,6 +32,8 @@ if(isset($_POST['delete'])){
     <link rel="stylesheet" href="./css/custom.css">
     <script src="./js/jquery-2.0.3.min.js"></script>
     <script src="./js/bootstrap.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>-->
+    <!--<script src="./js/geolocation.js"></script>-->
     <script>
         function charCount(v){
             var length = v.value.length;
@@ -63,7 +65,9 @@ if (isset($_SESSION['message'])) {
                   style='resize: none;' onKeyUp="charCount(this)"></textarea><br>
 
         <div  align="right">
-            <button type="submit" name="roar" class="btn btn-warning btn-md">Roar</button>
+           <!-- <input type='hidden' name='lot' value='0'>-->
+           <!-- <input type='hidden' name='lng' value='0'>-->
+            <button type="submit" name="roar" onsubmit="getLocation()" class="btn btn-warning btn-md">Roar</button>
         </div>
 
     </form>
