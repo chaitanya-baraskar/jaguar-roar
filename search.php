@@ -62,7 +62,7 @@ if(isset($_POST['delete'])){
     }
     ?>
     <div class="container" id="stuff" align="center" style='background-color : transparent;overflow:auto; z-index:2'>
-
+        <br><br>
         <?php
         $tag_string= mysql_real_escape_string($_POST['q']);;
         $tag_string=strtolower($tag_string);
