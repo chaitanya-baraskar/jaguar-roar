@@ -6,10 +6,11 @@ include_once("common_functions.php");
 if (user_exist($_SESSION['username'])){
   $userid = $_SESSION['userid'];
   $body = substr($_POST['body'],0,360);
-  $body = mysql_real_escape_string($body);
-  $body .= (string)$_POST['lat'];
+  $body = htmlspecialchars($body);
+  $lat = $_POST['lat'];
+  $lng = $_POST['lng'];
 
-  add_post($userid,$body);
+  add_post($userid, $body, $lat, $lng);
 
   header("Location:index.php");
 }

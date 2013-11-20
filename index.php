@@ -32,8 +32,7 @@ if(isset($_POST['delete'])){
     <link rel="stylesheet" href="./css/custom.css">
     <script src="./js/jquery-2.0.3.min.js"></script>
     <script src="./js/bootstrap.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
-    <!--<script src="./js/geolocation.js"></script>-->
+
     <script>
         function charCount(v){
             var length = v.value.length;
@@ -41,29 +40,22 @@ if(isset($_POST['delete'])){
         };
     </script>
 
-    <script>
-        function getLocation() {
-// Check to see if the browser supports the GeoLocation API.
-            alert("You are here");
+    <script type="text/javascript">
+        $(document).ready(function(){
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(getCoords);
-
             }
             else{
                 alert("Nooooooo!!!!!");
                 console.log("No location services");
             }
-        }
+        });
 
         function getCoords( position ) {
-
-            $( "#lat" ).val( position.coords.latitude );
-            $( "#lng" ).val( position.coords.longitude );
-
-            // $( '#result' ).text( $("#lat").val() + ', ' + $("#long").val() );
+            document.getElementById('lat').value = position.coords.latitude;
+            document.getElementById('lng').value = position.coords.longitude;
         }
-    </script>
-
+    </script
 
 </head>
 
@@ -89,9 +81,9 @@ if (isset($_SESSION['message'])) {
                   style='resize: none;' onKeyUp="charCount(this)"></textarea><br>
 
         <div  align="right">
-            <input type='hidden' name='lat' value='0'>
-            <input type='hidden' name='lng' value='0'>
-            <button type="submit" name="roar" onsubmit="return getLocation()" class="btn btn-warning btn-md">Roar</button>
+            <input type='hidden' name='lat' id='lat' value='0'>
+            <input type='hidden' name='lng' id='lng' value='0'>
+            <button type="submit" name="roar"  class="btn btn-warning btn-md">Roar</button>
         </div>
 
     </form>
@@ -127,5 +119,6 @@ if (isset($_SESSION['message'])) {
 
 ?>
 </body>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 </html>
 

@@ -1,12 +1,12 @@
 <?php
 
-function add_post($userid,$body){
+function add_post($userid, $body, $lat, $lng){
    if (!$userid | !$body){
      $_SESSION['message']="Empty Message";
      return;
    }
    $body = mysql_real_escape_string($body);
-   $sqlquery = "insert into roars (users_id, body, timestamp) values ($userid, '$body' ,now())";
+   $sqlquery = "insert into roars (users_id, body, timestamp, lat, lng) values ($userid, '$body' ,now(), $lat, $lng)";
    $result = mysql_query($sqlquery);
    if (!$result){
      die(mysql_error());
@@ -54,7 +54,7 @@ function show_posts($userid,$limit=0){
     while($data = mysql_fetch_object($result)){
         $roars[] = array( 	'timestamp' => $data->timestamp,
             'username' => $data->username,
-            'body' => substr(htmlspecialchars(stripslashes($data->body)),0, 360),
+            'body' => substr(stripslashes(nl2br($data->body)),0,360),
             'msg_id'=> $data->id,
         );
     }
@@ -83,7 +83,7 @@ function search_posts($tags,$limit=0){
     while($data = mysql_fetch_object($result)){
         $roars[] = array( 	'timestamp' => $data->timestamp,
             'username' => $data->username,
-            'body' => substr(htmlspecialchars(stripslashes($data->body)),0,360),
+            'body' => substr(stripslashes(nl2br($data->body)),0,360),
             'msg_id'=> $data->id,
         );
     }
