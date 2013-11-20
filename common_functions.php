@@ -45,7 +45,7 @@ function show_posts($userid,$limit=0){
         $added = '';
     }
 
-    $sqlquery = "select roars.users_id, roars.body, roars.timestamp, roars.id, users.username from roars, users
+    $sqlquery = "select roars.users_id, roars.body, roars.timestamp, roars.id, roars.lat, roars.lng, users.username from roars, users
 		where roars.users_id in ($user_string) and roars.users_id = users.id
 		order by roars.timestamp desc $added ";
 
@@ -56,6 +56,8 @@ function show_posts($userid,$limit=0){
             'username' => $data->username,
             'body' => substr(stripslashes(nl2br($data->body)),0,360),
             'msg_id'=> $data->id,
+            'lat'=>$data->lat,
+            'lng'=>$data->lng,
         );
     }
     return $roars;
@@ -75,7 +77,7 @@ function search_posts($tags,$limit=0){
         $added = '';
     }
 
-    $sqlquery = "select roars.users_id, roars.body, roars.timestamp, roars.id, users.username, hashtags.hashtag, hashtags.roars_id from roars, users, hashtags
+    $sqlquery = "select roars.users_id, roars.body, roars.timestamp, roars.lat, roars.lng, roars.id, users.username, hashtags.hashtag, hashtags.roars_id from roars, users, hashtags
 		where hashtags.hashtag in ('$tag_string') and hashtags.roars_id = roars.id and roars.users_id = users.id
 		order by roars.timestamp desc $added ";
     $result = mysql_query($sqlquery);
@@ -85,6 +87,8 @@ function search_posts($tags,$limit=0){
             'username' => $data->username,
             'body' => substr(stripslashes(nl2br($data->body)),0,360),
             'msg_id'=> $data->id,
+            'lat'=>$data->lat,
+            'lng'=>$data->lng,
         );
     }
     return $roars;
@@ -281,6 +285,8 @@ function display_roars($roars){
         echo "<div class='panel-body' style='text-align: left'>\n";
         echo "" . $list['body'] . "<br/>\n";
         echo "</div>\n";
+        echo "<div class='panel-footer' align='right' style='background-color: #fcf8e3;'><a href='map.php?lat=".$list['lat']."&lng=".$list['lng']."'><span style='color: #c09853;'>Map&nbsp;
+             </span></span><span class='glyphicon glyphicon-screenshot pull-right' style='color: #c09853;'></span></a></div>";
         echo "</div>\n";
     }
 

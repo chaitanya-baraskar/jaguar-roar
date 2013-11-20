@@ -8,8 +8,7 @@ if (!$_SESSION['userid']) {
     exit;
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta charset="utf-8">
@@ -23,9 +22,10 @@ if (!$_SESSION['userid']) {
 </head>
 <body>
 <?php show_navbar() ?>
+
 <div id="imagecover" style='overflow:auto; z-index:1'>
     <div class="container" id="stuff" style='background-color : transparent;overflow:auto; z-index:2'>
-<h1>List of Users</h1>
+        <br><br><br><br><br><br>
 <?php
   $users = show_users();
   $sheep = following($_SESSION['userid']);
