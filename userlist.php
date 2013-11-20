@@ -2,6 +2,7 @@
 session_start();
 include_once("connection.php");
 include_once("common_functions.php");
+
 if (!$_SESSION['userid']) {
     header("Location: login.php");
     exit;
@@ -11,43 +12,49 @@ if (!$_SESSION['userid']) {
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Meow - User list</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Itty Bitty Kitty</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="./js/jquery-2.0.3.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
 </head>
 <body>
 <?php show_navbar() ?>
+<div id="imagecover" style='overflow:auto; z-index:1'>
+    <div class="container" id="stuff" style='background-color : transparent;overflow:auto; z-index:2'>
 <h1>List of Users</h1>
 <?php
   $users = show_users();
   $sheep = following($_SESSION['userid']);
 if (count($users)){
 ?>
-<table border='1' cellspacing='0' cellpadding='5' width='500'>
     <?php
     foreach ($users as $key => $value){
-        echo "<tr valign='top'>\n";
-        echo "<td>".$key ."</td>\n";
-        echo "<td>".$value;
+        echo "<div class='panel panel-default'>";
+        echo "<div class='panel-body'>";
+        echo "$value";
         if (in_array($key,$sheep)){
-            echo " <small>
-		<a href='tofollow.php?id=$key&do=unfollow'>unfollow</a>
-		</small>";
+            echo "<button type='button' onclick='window.location.href=\"tofollow.php?id=$key&do=unfollow\"' class='btn btn-danger pull-right'>Unfollow</button>";
         }else{
-            echo " <small>
-		<a href='tofollow.php?id=$key&do=follow'>follow</a>
-		</small>";
+            echo "<button type='button' onclick='window.location.href=\"tofollow.php?id=$key&do=follow\"' class='btn btn-warning pull-right'>&nbsp;Follow&nbsp;&nbsp;</button>";
         }
-        echo "</td>\n";
-        echo "</tr>\n";
+        echo "</div>";
+        echo "</div>";
     }
     ?>
-</table>
 <?php
     }else{
 ?>
-<p><b>There are no users in the system!</b></p>
+<div align="center">
+<span style="color: white;"><strong>There are no users in the system!</strong></span>
+</div>
 <?php
     }
 ?>
+        </div>
+    </div>
 </body>
 </html>

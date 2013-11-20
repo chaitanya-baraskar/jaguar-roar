@@ -237,7 +237,7 @@ function show_navbar(){
     echo "  </button>\n";
     echo "  <div class='collapse navbar-collapse navHeaderCollapse' style='overflow:hidden;'>\n";
     echo "    <ul class='nav navbar-nav'>\n";
-    echo "      <li class='active'><a href='index.php'>Home</a></li>\n";
+    echo "      <li><a href='index.php'>Home</a></li>\n";
     echo "      <li><a href='userlist.php'>Follow</a></li>\n";
     echo "     </ul>\n";
     echo "    <ul class='nav navbar-nav navbar-right'>\n";

@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add.php" afterPath="$PROJECT_DIR$/add.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common_functions.php" afterPath="$PROJECT_DIR$/common_functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userlist.php" afterPath="$PROJECT_DIR$/userlist.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Fall2013-Group6.iws" />
@@ -41,19 +42,19 @@
       <file leaf-file-name="common_functions.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common_functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="254" column="1" selection-start="7776" selection-end="7776" vertical-scroll-proportion="-115.15385" vertical-offset="1324" max-vertical-offset="4998">
+            <state line="249" column="45" selection-start="7659" selection-end="7659" vertical-scroll-proportion="-27.538462" vertical-offset="3517" max-vertical-offset="4998">
               <folding>
-                <marker date="1384906477852" expanded="true" signature="6844:6860" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="7154:7170" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="7485:7501" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="7950:7983" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="8060:8105" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="8153:8164" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="8196:8227" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="8344:8373" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="8429:8460" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="8561:8603" placeholder="..." />
-                <marker date="1384906477852" expanded="true" signature="9141:9157" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="6844:6860" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="7139:7155" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="7470:7486" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="7935:7968" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="8045:8090" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="8138:8149" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="8181:8212" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="8329:8358" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="8414:8445" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="8546:8588" placeholder="..." />
+                <marker date="1384910827012" expanded="true" signature="9126:9142" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -68,25 +69,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userlist.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="userlist.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userlist.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="1" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="986">
+            <state line="31" column="0" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.31108463" vertical-offset="266" max-vertical-offset="1105">
               <folding>
-                <marker date="1384135175358" expanded="true" signature="916:985" placeholder="..." />
-                <marker date="1384135175358" expanded="true" signature="1029:1094" placeholder="..." />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="61" selection-start="2278" selection-end="2278" vertical-scroll-proportion="0.50863063" vertical-offset="867" max-vertical-offset="2210">
+            <state line="73" column="107" selection-start="1979" selection-end="2092" vertical-scroll-proportion="-20.26923" vertical-offset="714" max-vertical-offset="2210">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#body#0;n#!!top" expanded="true" />
@@ -122,21 +123,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/userlist.php" />
         <option value="$PROJECT_DIR$/search.php" />
         <option value="$PROJECT_DIR$/add.php" />
-        <option value="$PROJECT_DIR$/common_functions.php" />
         <option value="$PROJECT_DIR$/js/geolocation.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/common_functions.php" />
+        <option value="$PROJECT_DIR$/userlist.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="-1688" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -211,7 +212,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1688" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -219,7 +220,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16845238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -251,7 +252,6 @@
         <state line="85" column="4" selection-start="2403" selection-end="2415" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1853">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#body#0;n#!!top" expanded="true" />
@@ -270,8 +270,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="1" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="986">
           <folding>
-            <marker date="1384135175358" expanded="true" signature="916:985" placeholder="..." />
-            <marker date="1384135175358" expanded="true" signature="1029:1094" placeholder="..." />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -281,7 +282,6 @@
         <state line="5" column="0" selection-start="94" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1853">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#body#0;n#!!top" expanded="true" />
@@ -300,8 +300,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="1" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="986">
           <folding>
-            <marker date="1384135175358" expanded="true" signature="916:985" placeholder="..." />
-            <marker date="1384135175358" expanded="true" signature="1029:1094" placeholder="..." />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -311,7 +312,6 @@
         <state line="5" column="0" selection-start="94" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1853">
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#body#0;n#!!top" expanded="true" />
@@ -336,12 +336,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userlist.php">
+    <entry file="file://$PROJECT_DIR$/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="1" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="986">
+        <state line="9" column="23" selection-start="265" selection-end="265" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="45" selection-start="7659" selection-end="7659" vertical-scroll-proportion="-27.538462" vertical-offset="3517" max-vertical-offset="4998">
           <folding>
-            <marker date="1384135175358" expanded="true" signature="916:985" placeholder="..." />
-            <marker date="1384135175358" expanded="true" signature="1029:1094" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="6844:6860" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="7139:7155" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="7470:7486" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="7935:7968" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="8045:8090" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="8138:8149" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="8181:8212" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="8329:8358" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="8414:8445" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="8546:8588" placeholder="..." />
+            <marker date="1384910827012" expanded="true" signature="9126:9142" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -353,41 +369,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common_functions.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="254" column="1" selection-start="7776" selection-end="7776" vertical-scroll-proportion="-115.15385" vertical-offset="1324" max-vertical-offset="4998">
+        <state line="73" column="107" selection-start="1979" selection-end="2092" vertical-scroll-proportion="-20.26923" vertical-offset="714" max-vertical-offset="2210">
           <folding>
-            <marker date="1384906477852" expanded="true" signature="6844:6860" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="7154:7170" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="7485:7501" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="7950:7983" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="8060:8105" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="8153:8164" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="8196:8227" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="8344:8373" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="8429:8460" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="8561:8603" placeholder="..." />
-            <marker date="1384906477852" expanded="true" signature="9141:9157" placeholder="..." />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add.php">
+    <entry file="file://$PROJECT_DIR$/userlist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="265" selection-end="265" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="61" selection-start="2278" selection-end="2278" vertical-scroll-proportion="0.50863063" vertical-offset="867" max-vertical-offset="2210">
+        <state line="31" column="0" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.31108463" vertical-offset="266" max-vertical-offset="1105">
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
