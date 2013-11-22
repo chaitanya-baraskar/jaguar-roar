@@ -67,11 +67,11 @@ else{
 function show_reg_form(){
     ?>
     <!doctype html>
-
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Itty Bitty Kitty</title>
+        <title>Roar!</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.css" media="screen">
         <link rel="stylesheet" href="css/custom.css">
@@ -96,8 +96,8 @@ function show_reg_form(){
                     <button type="button" class="close" onclick="location.href='login.php';" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title">New User Registration</h4>
                 </div>
+                <form class="form-horizontal" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                         <div class="form-group">
                             <label for="username" class="sr-only" >Username</label>
                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">
@@ -122,7 +122,6 @@ function show_reg_form(){
                         }
                         ?>
 
-                        <!-- </form>-->
                 </div>
                 <div class="modal-footer" style="border-style: none;">
                     <button type="submit" name="Register" class="btn btn-warning btn-lg">Register</button>
@@ -132,15 +131,8 @@ function show_reg_form(){
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-
-
     </body>
     </html>
-
-
-
 <?php
-
 }
-
 ?>
