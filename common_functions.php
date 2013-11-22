@@ -37,8 +37,6 @@ function show_posts($userid,$limit=0){
 
     $user_string = implode(',', $userid);
 
-    $added =  " and id in ($user_string)";
-
     if ($limit > 0){
         $added = "limit $limit";
     }else{
@@ -68,8 +66,6 @@ function search_posts($tags,$limit=0){
     $roars = array();
 
     $tag_string = implode("','", $tags);
-
-    //$added =  " and hashtags.hashtag in ('$tag_string')";
 
     if ($limit > 0){
         $added = "limit $limit";
@@ -136,7 +132,7 @@ function become_sheep($my_userID,$their_userID){
     if ($count == 0){
         $sqlquery = "insert into sheep (users_id, sheep_id)
 				values ($their_userID,$my_userID)";
-        $result = mysql_query($sqlquery);
+       mysql_query($sqlquery);
     }
 }
 
@@ -149,7 +145,7 @@ function im_not_a_sheep($my_userID,$their_userID){
 				where users_id='$their_userID' and sheep_id='$my_userID'
 				limit 1";
 
-        $result = mysql_query($sqlquery);
+        mysql_query($sqlquery);
     }
 }
 

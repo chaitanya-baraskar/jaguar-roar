@@ -75,7 +75,7 @@ if (isset($_SESSION['message'])) {
     <form method='post' action='add.php'>
         <br>
         <div align="right" style="color: white; font-weight: bold;">
-        <scan id="char_count"> 0 </scan> <scan> / 360 </scan>
+        <span id="char_count"> 0 </span> <span> / 360 </span>
         </div>
         <textarea class="form-control has-warning" name='body' rows="5" maxlength='360' placeholder="Your Status"
                   style='resize: none;' onKeyUp="charCount(this)"></textarea><br>

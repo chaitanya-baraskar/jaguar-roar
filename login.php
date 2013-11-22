@@ -3,7 +3,7 @@ session_start();
 include_once("connection.php");
 include_once("common_functions.php");
 $page = $_SERVER['PHP_SELF'];
-//session_unset();
+
 if (isset($_SESSION['userid'])){unset($_SESSION['userid']);}
 if (isset($_SESSION['username'])){unset($_SESSION['username']);}
 if (isset($_SESSION['password'])){unset($_SESSION['password']);}
@@ -54,12 +54,12 @@ if (isset($_POST['login'])) {
 function show_login(){
     ?>
 
-    <!doctype html>
+   <!doctype html>
 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Itty Bitty Kitty</title>
+        <title>Roar!</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.css" media="screen">
         <link rel="stylesheet" href="css/custom.css">
@@ -103,8 +103,6 @@ function show_login(){
                             unset($_SESSION['message']);
                         }
                         ?>
-
-                        <!-- </form>-->
                 </div>
                 <div class="modal-footer" style="border-style: none;">
                     <button type="button" name="new" class="btn btn-default btn-xs" onclick="location.href='registration.php';">New User?</button>
@@ -120,7 +118,6 @@ function show_login(){
 
     </body>
     </html>
-
 
 <?php
 }

@@ -13,7 +13,7 @@ if (!$_SESSION['userid']) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Itty Bitty Kitty</title>
+    <title>Jaguar Roar! Users</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="./css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="./css/custom.css">
