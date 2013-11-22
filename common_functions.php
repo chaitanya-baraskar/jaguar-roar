@@ -255,7 +255,7 @@ function show_navbar(){
 }
 
 function display_roars($roars){
-    foreach ($roars as $key => $list) {
+    foreach ($roars as $list) {
         echo "<div class='panel panel-warning'>\n";
         echo "<div class='panel-heading' style='padding-bottom: 0; padding-top:0;'>\n";
         echo "<table class='table table-condensed panel-title' style='text-align: center;border-collapse: collapse;'>\n";
