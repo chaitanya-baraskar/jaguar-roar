@@ -22,11 +22,11 @@ if(isset($_POST['delete'])){
 
 
 <!doctype html>
-
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Itty Bitty Kitty</title>
+    <title>Roar!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="./css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="./css/custom.css">
@@ -37,7 +37,7 @@ if(isset($_POST['delete'])){
         function charCount(v){
             var length = v.value.length;
             $('#char_count').text(length);
-        };
+        }
     </script>
 
     <script type="text/javascript">

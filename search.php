@@ -37,7 +37,7 @@ if(isset($_POST['delete'])){
 
 
 <!doctype html>
-
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

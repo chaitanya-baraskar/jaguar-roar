@@ -55,7 +55,7 @@ function show_login(){
     ?>
 
    <!doctype html>
-
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -86,8 +86,8 @@ function show_login(){
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title">Sign In</h4>
                 </div>
+                <form class="form-horizontal" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                         <div class="form-group">
                             <label for="username" class="sr-only" >Username</label>
                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">
