@@ -242,7 +242,7 @@ function show_navbar(){
     echo "     </ul>\n";
     echo "    <ul class='nav navbar-nav navbar-right'>\n";
     echo "<li style='padding-top: 5px'><form class='navbar-form' method='post' action='search.php' id='search' name='search'>\n";
-    echo "<input name='q' type='text' size='40' placeholder='Search' />\n";
+    echo "<input name='q' type='text' style='font-size:16px;' size='40' placeholder='Search' />\n";
     echo "</form></li>\n";
     echo "      <li><a href='#'></a></li>\n";
     echo "      <li><a href='#'></a></li>\n";
